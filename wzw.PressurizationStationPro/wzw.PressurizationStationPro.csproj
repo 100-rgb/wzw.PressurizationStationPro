@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25C66E04-F02B-4E29-A9D5-9D483177548E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>wzw.PressurizationStationPro</RootNamespace>
+    <AssemblyName>wzw.PressurizationStationPro</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>scada.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniExcel, Version=1.28.5.0, Culture=neutral, PublicKeyToken=e7310002a53eac39, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MiniExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.90.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1.界面层\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1.界面层\MeterShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="1.界面层\MeterShow.Designer.cs">
+      <DependentUpon>MeterShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5.工具库\IniConfigHelper.cs" />
+    <Compile Include="1.界面层\FrmMsgWithAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmMsgWithAck.Designer.cs">
+      <DependentUpon>FrmMsgWithAck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1.界面层\FrmMsgNoAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmMsgNoAck.Designer.cs">
+      <DependentUpon>FrmMsgNoAck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1.界面层\FrmParamSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmParamSet.Designer.cs">
+      <DependentUpon>FrmParamSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4.实体库\PlcData.cs" />
+    <Compile Include="2.数据层\PlcDataService.cs" />
+    <Compile Include="1.界面层\FrmValveControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmValveControl.Designer.cs">
+      <DependentUpon>FrmValveControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4.实体库\Enum.cs" />
+    <Compile Include="5.工具库\CameraHelper.cs" />
+    <Compile Include="1.界面层\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4.实体库\HistoryData.cs" />
+    <Compile Include="1.界面层\FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmHistory.Designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2.数据层\HistoryDataService.cs" />
+    <Compile Include="5.工具库\DataGridViewHelper.cs" />
+    <Compile Include="1.界面层\FrmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmPrint.designer.cs">
+      <DependentUpon>FrmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1.界面层\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1.界面层\FrmUserManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmUserManage.Designer.cs">
+      <DependentUpon>FrmUserManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="3.通信层\S7NetLib.cs" />
+    <Compile Include="4.实体库\SysInfo.cs" />
+    <Compile Include="2.数据层\SysInfoService.cs" />
+    <Compile Include="4.实体库\SysAdmin.cs" />
+    <Compile Include="5.工具库\SQLiteHelper.cs" />
+    <Compile Include="2.数据层\SQLiteService.cs" />
+    <Compile Include="2.数据层\SysAdminService.cs" />
+    <Compile Include="5.工具库\StringSecurityHelper.cs" />
+    <EmbeddedResource Include="1.界面层\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\MeterShow.resx">
+      <DependentUpon>MeterShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmMsgWithAck.resx">
+      <DependentUpon>FrmMsgWithAck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmMsgNoAck.resx">
+      <DependentUpon>FrmMsgNoAck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmParamSet.resx">
+      <DependentUpon>FrmParamSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmValveControl.resx">
+      <DependentUpon>FrmValveControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmHistory.resx">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmPrint.resx">
+      <DependentUpon>FrmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmUserManage.resx">
+      <DependentUpon>FrmUserManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\Debug\wzw.PressurizationStationPro.exe.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Image\Border.png" />
+    <Content Include="bin\Debug\Image\DataPanel.png" />
+    <Content Include="bin\Debug\Image\Green.png" />
+    <Content Include="bin\Debug\Image\History.png" />
+    <Content Include="bin\Debug\Image\Login.png" />
+    <Content Include="bin\Debug\Image\Message.png" />
+    <Content Include="bin\Debug\Image\Param.png" />
+    <Content Include="bin\Debug\Image\ParamPanel.png" />
+    <Content Include="bin\Debug\Image\Pink.png" />
+    <Content Include="bin\Debug\Image\PumpPanel.png" />
+    <Content Include="bin\Debug\Image\Question.png" />
+    <Content Include="bin\Debug\Image\Report.png" />
+    <Content Include="bin\Debug\Image\scada.ico" />
+    <Content Include="bin\Debug\Image\Sensor.png" />
+    <Content Include="bin\Debug\Image\Tank.png" />
+    <Content Include="bin\Debug\Image\TopPanel.png" />
+    <Content Include="bin\Debug\Image\User.png" />
+    <Content Include="bin\Debug\Image\Yellow.png" />
+    <Content Include="bin\Debug\wzw.PressurizationStationPro.exe" />
+    <Content Include="bin\Debug\wzw.PressurizationStationPro.pdb" />
+    <Content Include="scada.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xbd.ControlLib\xbd.ControlLib.csproj">
+      <Project>{D95ED733-CF03-4636-A414-3882D3FA8CAB}</Project>
+      <Name>xbd.ControlLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xbd.DataConvertLib\xbd.DataConvertLib.csproj">
+      <Project>{867237ad-51f4-4ca5-ad32-d68844cc9101}</Project>
+      <Name>xbd.DataConvertLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xbd.s7netplus\xbd.s7netplus.csproj">
+      <Project>{87dca77d-a82c-4ccd-8792-5e6cfb0cc765}</Project>
+      <Name>xbd.s7netplus</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
